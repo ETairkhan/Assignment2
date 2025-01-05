@@ -14,10 +14,8 @@ public class MyApplication {
         payable.add(student1);
         payable.add(student2);
 
-        // Sort the list using a Comparator
         payable.sort(Comparator.comparingDouble(Payable::getPaymentAmount));
 
-        // Print the data
         printData(payable);
     }
 
