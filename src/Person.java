@@ -36,23 +36,22 @@ public class Person implements Comparable<Person>, Payable {
         this.surname = surname;
     }
 
+    @Override
+    public String toString() {
+        return  "ID: "+ id + ", " + name + " " + surname;
+    }
+
     public String getPosition() {
         return "Student";
     }
 
-
-
-    @Override
-    public int compareTo(Person other) {
-        return Double.compare(this.getPaymentAmount(), other.getPaymentAmount());
-    }
     @Override
     public double getPaymentAmount() {
         return 0.0;
     }
     @Override
-    public String toString() {
-        return  "ID: "+ id + ", " + name + " " + surname;
+    public int compareTo(Person other) {
+        return Double.compare(this.getPaymentAmount(), other.getPaymentAmount());
     }
 
 }

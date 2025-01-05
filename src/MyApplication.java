@@ -8,18 +8,18 @@ public class MyApplication {
         Student student1 = new Student("Ringo", "Starr", 2.5);
         Student student2 = new Student("Paul", "McCartney", 3.9);
 
-        ArrayList<Payable> payable = new ArrayList<>();
+        ArrayList<Person> payable = new ArrayList<>();
         payable.add(employee1);
         payable.add(employee2);
         payable.add(student1);
         payable.add(student2);
 
-        payable.sort(Comparator.comparingDouble(Payable::getPaymentAmount));
+        Collections.sort(payable);
 
         printData(payable);
     }
 
-    public static void printData(Iterable<Payable> payables) {
+    public static void printData(Iterable<Person> payables) {
         for (Payable payable : payables) {
             if (payable instanceof Employee) {
                 Employee emp = (Employee) payable;
